@@ -1,12 +1,20 @@
 [build-system]
-requires = ["setuptools>=75", "wheel"]
+requires = ["setuptools >= 61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "aipat"
-version = "1.0.0"
+dynamic = ["version"]
 description = "This is AIPAT: AI Powered Assistant Tool, for Terminals"
-authors = [{ name = "Somesh Sharma", email = "someshs.ce@gmail.com" }]
+authors = [
+    {name = "Somesh Sharma", email = "someshs.ce@gmail.com"}
+]
+maintainers = [
+    {name = "Somesh Sharma", email = "someshs.ce@gmail.com"}
+]
+requires-python = ">= 3.10"
+readme = "README.md"
+license = {file = "LICENSE"}
 dependencies = [
     "rich",
     "click",
@@ -21,11 +29,11 @@ dependencies = [
     'pydantic[email,timezone]',
     "langchain_google_community",
 ]
-readme = "README.md"
-requires-python = ">= 3.10"
 classifiers = [
-    "Programming Language :: Python :: 3",
-    "license :: OSI Approved :: GNU AGPLv3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Operating System :: OS Independent",
 ]
 keywords = ["AI", "Terminal", "CMD", "command", "LLM", "Powershell", "Assistant", "Tool"]
@@ -38,5 +46,6 @@ package-dir = { "" = "." }
 aipat = "main:cli"
 
 [project.urls]
-Homepage = "https://github.com/someshsce/aipat"
+Repository = "https://github.com/someshsce/aipat.git"
+GitHub = "https://github.com/someshsce/aipat"
 Issues = "https://github.com/someshsce/aipat/issues"
