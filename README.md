@@ -258,7 +258,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- LICENSE -->
 ## License
 
-Distributed under the [GNU AGPLv3 License](LICENSE.md). See `LICENSE.md` for more information.
+Distributed under the [GNU AGPLv3 License](LICENSE). See `LICENSE` for more information.
 
 <!-- CONTACT -->
 ## Contact
