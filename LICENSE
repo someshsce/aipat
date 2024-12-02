@@ -629,8 +629,8 @@ to attach them to the start of each source file to most effectively
 state the exclusion of warranty; and each file should have at least
 the "copyright" line and a pointer to where the full notice is found.
 
-    AIPAT: AI Powered Assistant Tool - A versatile terminal-based assistant 
-    that can generate code, execute shell commands, search and summarize 
+    AIPATT: AI Powered Assistant Tool for Terminals - A versatile terminal-based 
+    assistant that can generate code, execute shell commands, search and summarize 
     information from Google, and interact via chat.
 
     Copyright (C) 2024 Somesh Sharma
@@ -645,12 +645,12 @@ the "copyright" line and a pointer to where the full notice is found.
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU Affero General Public License for more details.
 
-    You should have received a copy of the GNU Affero General Public License
+    You should have received a copy of the GNU Affero General Public License v3.0
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
     For any inquiries, you can reach me at: someshs.ce@gmail.com
 
-    You can access the source code at: https://github.com/someshsce/aipat
+    You can access the source code at: https://github.com/someshsce/aipatt
 
 Also add information on how to contact you by electronic and paper mail.
 

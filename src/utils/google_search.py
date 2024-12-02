@@ -7,7 +7,7 @@ from config import update_config
 from langchain_core.tools import Tool
 from langchain_google_community import GoogleSearchAPIWrapper
 
-env_path = os.path.join(os.path.expanduser("~"), ".aipat.env")
+env_path = os.path.join(os.path.expanduser("~"), ".aipatt.env")
 load_dotenv(env_path)
 
 GOOGLE_CSE_ID=os.getenv("GOOGLE_CSE_ID")
@@ -16,7 +16,7 @@ GOOGLE_SEARCH_URL=os.getenv("GOOGLE_SEARCH_URL")
 
 if not GOOGLE_CSE_ID or not GOOGLE_API_KEY:
     print("Google API keys are missing! Please check your configuration.")
-    env_path = os.path.join(os.path.expanduser("~"), ".aipat.env")
+    env_path = os.path.join(os.path.expanduser("~"), ".aipatt.env")
     update_config(env_path)
     sys.exit(1)
 

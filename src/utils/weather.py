@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 from langchain_core.tools import Tool
 from langchain_community.utilities import OpenWeatherMapAPIWrapper
 
-env_path = os.path.join(os.path.expanduser("~"), ".aipat.env")
+env_path = os.path.join(os.path.expanduser("~"), ".aipatt.env")
 load_dotenv(env_path)
 
 OPENWEATHERMAP_API_KEY=os.getenv("OPENWEATHERMAP_API_KEY")

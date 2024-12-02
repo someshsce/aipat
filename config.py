@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 
 def setup_config(env_path):
-    """Prompt user for configuration details and save to the .aipat.env file."""
+    """Prompt user for configuration details and save to the .aipatt.env file."""
     print("Configuration file not found. Let's set it up.")
     
     try:

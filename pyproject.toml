@@ -3,9 +3,9 @@ requires = ["setuptools >= 61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "aipat"
+name = "aipatt"
 dynamic = ["version"]
-description = "This is AIPAT: AI Powered Assistant Tool, for Terminals"
+description = "This is AIPATT: AI Powered Assistant Tool for Terminals"
 authors = [
     {name = "Somesh Sharma", email = "someshs.ce@gmail.com"}
 ]
@@ -46,6 +46,6 @@ package-dir = { "" = "." }
 aipat = "main:cli"
 
 [project.urls]
-Repository = "https://github.com/someshsce/aipat.git"
-GitHub = "https://github.com/someshsce/aipat"
-Issues = "https://github.com/someshsce/aipat/issues"
+Repository = "https://github.com/someshsce/aipatt.git"
+GitHub = "https://github.com/someshsce/aipatt"
+Issues = "https://github.com/someshsce/aipatt/issues"

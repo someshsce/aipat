@@ -18,7 +18,7 @@ console2 = Console()
 
 def check_and_load_config():
     """Check if the configuration file exists, if not, prompt the user to create it."""
-    env_path = os.path.join(os.path.expanduser("~"), ".aipat.env")
+    env_path = os.path.join(os.path.expanduser("~"), ".aipatt.env")
     if not os.path.exists(env_path):
         setup_config(env_path)
     else:
@@ -43,25 +43,25 @@ def check_and_load_config():
 
 def cli(ctx, shell, code, chat, youtube, mail, gsearch, clear_memory, show_version, show_help, query, update_configuration):
     """
-    AIPAT: AI Powered Assistant Tool for Terminal
+    AIPATT: AI Powered Assistant Tool for Terminals
     """
     if update_configuration:
-        env_path = os.path.join(os.path.expanduser("~"), ".aipat.env")
+        env_path = os.path.join(os.path.expanduser("~"), ".aipatt.env")
         update_config(env_path)
         sys.exit(0)
 
     if show_version:
         try:
-            package_version = get_version("aipat")
-            console.print_success(f"AIPAT version {package_version}")
+            package_version = get_version("aipatt")
+            console.print_success(f"AIPATT version {package_version}")
         except PackageNotFoundError:
             console.print_error("Version information not available.")
         sys.exit(0)
 
     if show_help:
-        console2.print(Align(f"[bold green]Welcome to AIPAT: AI Powered Assistant Tool[/bold green]", align="center"))
+        console2.print(Align(f"[bold green]Welcome to AIPATT: AI Powered Assistant Tool for Terminals[/bold green]", align="center"))
         console2.print("""
-[bold yellow]Usage:[/bold yellow] aipat [OPTIONS] [QUERY]
+[bold yellow]Usage:[/bold yellow] aipatt [OPTIONS] [QUERY]
 
 [bold yellow]Options:[/bold yellow]
 -c,     --code                                     Generate Code.
@@ -72,19 +72,19 @@ def cli(ctx, shell, code, chat, youtube, mail, gsearch, clear_memory, show_versi
 -gs,    --gsearch                                  To Search on Google and Summarize it by an AI.
 -u,     --update-config                            Update the configuration settings.
 -cm,    --clear-memory                             To clear the whole chat memory.
--v,     --version                                  Print version of AIPAT.
+-v,     --version                                  Print version of AIPATT.
 -h,     --help                                     Print help message.
 
 [bold yellow]Examples:[/bold yellow]
-aipat "What is internet?"
-aipat "Latest news about AI"
-aipat -y "Top Python tutorials"
-aipat -s "How to update my system?"
-cat install.sh | aipat "Explain the code"
-aipat -gs "What is the capital of France?"
-aipat "Current Weather Condition of New York"
-aipat -c "Write a Python script for Fibonacci series"
-aipat -m "Send email to example@gmail.com, Meeting at 10 AM"
+aipatt "What is internet?"
+aipatt "Latest news about AI"
+aipatt -y "Top Python tutorials"
+aipatt -s "How to update my system?"
+cat install.sh | aipatt "Explain the code"
+aipatt -gs "What is the capital of France?"
+aipatt "Current Weather Condition of New York"
+aipatt -c "Write a Python script for Fibonacci series"
+aipatt -m "Send email to example@gmail.com, Meeting at 10 AM"
             """)
         sys.exit(0)
 

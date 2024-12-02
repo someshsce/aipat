@@ -14,7 +14,7 @@ from langchain_core.messages import HumanMessage, AIMessage
 from src.utils.email import EmailInput, compose_and_send_email
 from langgraph.graph import MessagesState, StateGraph, START, END
 
-env_path = os.path.join(os.path.expanduser("~"), ".aipat.env")
+env_path = os.path.join(os.path.expanduser("~"), ".aipatt.env")
 load_dotenv(env_path)
 
 console = RichConsole()
@@ -283,7 +283,7 @@ class LLM:
             ]
 
             message_history.append(
-                ("system", "You are an AI assistant named AIPAT: AI Powered Assistance Tool for Terminal.")
+                ("system", "You are an AI assistant named AIPATT: AI Powered Assistance Tool for Terminal.")
             )
 
             message_history.append(("human", prompt))
@@ -304,7 +304,7 @@ class LLM:
         """
         system_info = self.get_system_info()
         user_message = HumanMessage(content=
-                                    f"You are an AI assistant named AIPAT, running on the following system:\n"
+                                    f"You are an AI assistant named AIPATT, running on the following system:\n"
                                     f"OS: {system_info['os_name']} {system_info['os_version']}\n"
                                     f"Current Working Directory: {system_info['cwd']}\n\n"
                                     f"Provide only the shell command for: {query}\n"
@@ -323,7 +323,7 @@ class LLM:
         Ask the AI to generate code based on the user's request.
         """
         user_message = HumanMessage(content=
-                                    f"You are a coding assistant named AIPAT. Write code for the following request:\n"
+                                    f"You are a coding assistant named AIPATT. Write code for the following request:\n"
                                     f"{query}\n\n"
                                     f"Response format: Plain code with no explanation. And write only the code.")
         response = None

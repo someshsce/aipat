@@ -7,7 +7,7 @@ from email.mime.multipart import MIMEMultipart
 from langchain_core.tools import StructuredTool
 from pydantic import BaseModel, EmailStr, ValidationError
 
-env_path = os.path.join(os.path.expanduser("~"), ".aipat.env")
+env_path = os.path.join(os.path.expanduser("~"), ".aipatt.env")
 load_dotenv(env_path)
 
 SMTP_SERVER=os.getenv("SMTP_SERVER", "smtp.gmail.com")
@@ -60,12 +60,12 @@ def render_template(subject: str, body: str):
                 margin-bottom: 20px;
             }}
             .email-footer {{
-                font-size: 9px;
+                font-size: 7px;
                 color: #888;
                 text-align: center;
                 margin-top: 20px;
                 border-top: 1px solid #ddd;
-                padding-top: 10px;
+                padding-top: 9px;
             }}
             .email-footer a {{
                 color: #0056b3;
@@ -79,10 +79,10 @@ def render_template(subject: str, body: str):
             <div class="email-body">
                 <p>{formated_body}</p>
                 <br>
-                <p>Best regards, <strong>AIPAT</strong></p>
+                <p>Best regards, <strong>AIPATT</strong></p>
             </div>
             <div class="email-footer">
-                This email was sent by <strong>AIPAT: An AI Powered Assistance Tool</strong><br>
+                This email was sent by <strong>AIPATT: An AI Powered Assistance Tool for Terminals</strong><br>
             </div>
         </div>
     </body>
@@ -98,11 +98,11 @@ def send_html_email(subject: str, body: str, recipient_list: list):
             return "Recipient list is empty. Please provide at least one recipient."
 
         html_content = render_template(subject, body)
-        plain_text = f"{subject}\n\n{body}\n\nBest regards,\nAIPAT"
+        plain_text = f"{subject}\n\n{body}\n\nBest regards,\nAIPATT"
 
         msg = MIMEMultipart("alternative")
         msg["Subject"] = subject
-        msg["From"] = f"AIPAT <{USERNAME}>"
+        msg["From"] = f"AIPATT <{USERNAME}>"
         msg["To"] = ", ".join(recipient_list)
 
         msg.attach(MIMEText(plain_text, "plain"))
@@ -159,7 +159,7 @@ Subject: {subject}
 
 {body}
 
-Best regards, AIPAT
+Best regards, AIPATT
 -------------------
     """
     print(email_draft)
