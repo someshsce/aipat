@@ -1,6 +1,6 @@
 <!-- PROJECT LOGO -->
-<div style="text-align: center;">
-  <img src="https://img.shields.io/badge/AIPATT-Tool-blue" />
+![AIPATT](https://img.shields.io/badge/AIPATT-Tool-blue) ![PyPI](https://img.shields.io/pypi/v/aipatt)
+<div align=center>
 
 ### AIPATT
 
@@ -30,10 +30,8 @@ A versatile terminal-based AI Powered Assistant Tool.
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<div style="text-align: center;">
-  <video width="600" controls>
-    <source src="https://github.com/someshsce/aipatt/raw/main/.github/media/aipatt_demo.mp4" type="video/mp4">
-  </video>
+<div align=center>
+  
 </div>
 <br />
 
@@ -120,7 +118,7 @@ To see all available options, use:
   aipatt -h
   ```
 
-**`Available Commands`**
+### `Available Commands`
 
 `Generate Code`: Use this to generate code based on your input query.
 
@@ -182,7 +180,7 @@ To see all available options, use:
   aipatt -h
   ```
 
-**`Example Commands`**
+### `Example Commands`
 
 `Ask a Question`: Query the AI to answer questions directly:
 
@@ -255,19 +253,33 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-See `CONTRIBUTING.md` for more information.
+[See](CONTRIBUTING.md) `CONTRIBUTING.md` for more information.
 
 <!-- LICENSE -->
 ## License
 
-Distributed under the GNU AGPLv3 License. See `LICENSE.md` for more information.
+Distributed under the [GNU AGPLv3 License](LICENSE.md). See `LICENSE.md` for more information.
 
 <!-- CONTACT -->
 ## Contact
 
-Somesh Sharma
+**Author**: `Somesh Sharma`
 
-`LinkedIn`: [Somesh Sharma](https://www.linkedin.com/in/somesh9)  
-`Instagram`: [Somesh Sharma](https://www.instagram.com/somesh_el)  
-`Email`: [someshs.ce@gmail.com](mailto:someshs.ce@gmail.com)  
-`AIPATT Link`: [GitHub Link](https://github.com/someshsce/aipatt)
+<table border="0">
+  <tr>
+    <td><strong>AIPATT</strong></td>
+    <td><a href="https://pypi.org/project/aipatt/">PyPI Link</a></td>
+  </tr>
+  <tr>
+    <td><strong>LinkedIn</strong></td>
+    <td><a href="https://www.linkedin.com/in/somesh9">Somesh Sharma</a></td>
+  </tr>
+  <tr>
+    <td><strong>Instagram</strong></td>
+    <td><a href="https://www.instagram.com/somesh_el">Somesh Sharma</a></td>
+  </tr>
+  <tr>
+    <td><strong>Email</strong></td>
+    <td><a href="mailto:someshs.ce@gmail.com">someshs.ce@gmail.com</a></td>
+  </tr>
+</table>
