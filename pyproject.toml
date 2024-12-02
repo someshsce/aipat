@@ -39,8 +39,8 @@ classifiers = [
 keywords = ["AI", "Terminal", "CMD", "command", "LLM", "Powershell", "Assistant", "Tool"]
 
 [tool.setuptools_scm]
-version_scheme = "post-release"
-local_scheme = "node-and-date"
+version_scheme = "guess-next-dev"
+local_scheme = "node"
 
 [tool.setuptools]
 packages = { find = { where = ["."] } }
