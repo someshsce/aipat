@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aipat"
+version = "1.0.0"
+description = "This is AIPAT: AI Powered Assistant Tool, for Terminals"
+authors = [{ name = "Somesh Sharma", email = "someshs.ce@gmail.com" }]
+dependencies = [
+    "rich",
+    "click",
+    "psutil",
+    "langchain",
+    "langgraph",
+    "python-dotenv",
+    "beautifulsoup4",
+    "langchain-core",
+    "langchain-ollama",
+    "langchain-community",
+    'pydantic[email,timezone]',
+    "langchain_google_community",
+]
+readme = "README.md"
+requires-python = ">= 3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "license :: OSI Approved :: GNU AGPLv3",
+    "Operating System :: OS Independent",
+]
+keywords = ["AI", "Terminal", "CMD", "command", "LLM", "Powershell", "Assistant", "Tool"]
+
+[tool.setuptools]
+packages = { find = { where = ["."] } }
+package-dir = { "" = "." }
+
+[project.scripts]
+aipat = "main:cli"
+
+[project.urls]
+Homepage = "https://github.com/someshsce/aipat"
+Issues = "https://github.com/someshsce/aipat/issues"
