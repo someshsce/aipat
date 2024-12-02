@@ -1,11 +1,11 @@
 [build-system]
-requires = ["setuptools >= 61.0"]
+requires = ["setuptools >= 75.6.0", "setuptools_scm>=8.1.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "aipatt"
 dynamic = ["version"]
-description = "This is AIPATT: AI Powered Assistant Tool for Terminals"
+description = "AIPATT: AI Powered Assistant Tool for Terminals"
 authors = [
     {name = "Somesh Sharma", email = "someshs.ce@gmail.com"}
 ]
@@ -38,12 +38,16 @@ classifiers = [
 ]
 keywords = ["AI", "Terminal", "CMD", "command", "LLM", "Powershell", "Assistant", "Tool"]
 
+[tool.setuptools_scm]
+version_scheme = "post-release"
+local_scheme = "node-and-date"
+
 [tool.setuptools]
 packages = { find = { where = ["."] } }
 package-dir = { "" = "." }
 
 [project.scripts]
-aipat = "main:cli"
+aipatt = "main:cli"
 
 [project.urls]
 Repository = "https://github.com/someshsce/aipatt.git"
