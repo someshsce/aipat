@@ -1,5 +1,5 @@
 import subprocess
-from src.utils.formatter import RichConsole
+from aipatt.utils.formatter import RichConsole
 
 console = RichConsole()
 

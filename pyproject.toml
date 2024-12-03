@@ -6,9 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "aipatt"
 dynamic = ["version"]
 description = "AIPATT: AI Powered Assistant Tool for Terminals"
-authors = [
-    {name = "Somesh Sharma", email = "someshs.ce@gmail.com"}
-]
+authors = [{name = "Somesh Sharma", email = "someshs.ce@gmail.com"}]
 maintainers = [
     {name = "Somesh Sharma", email = "someshs.ce@gmail.com"}
 ]
@@ -43,13 +41,13 @@ version_scheme = "only-version"
 local_scheme = "no-local-version"
 
 [tool.setuptools]
-packages = { find = { where = ["."] } }
-package-dir = { "" = "." }
+packages = { find = { where = ["src"], include = ["aipatt"] } }
+package-dir = { "" = "src" }
 
 [project.scripts]
-aipatt = "main:cli"
+aipatt = "aipatt.main:cli"
 
 [project.urls]
+Homepage = "http://pypi.org/project/aipatt/"
 Repository = "https://github.com/someshsce/aipatt.git"
-GitHub = "https://github.com/someshsce/aipatt"
 Issues = "https://github.com/someshsce/aipatt/issues"

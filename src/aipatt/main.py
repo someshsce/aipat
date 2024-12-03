@@ -1,16 +1,16 @@
 import os
 import sys
 import click
-from src.ai.llm import LLM
 from rich.align import Align
+from aipatt.ai.llm import LLM
 from dotenv import load_dotenv
 from rich.console import Console
-from src.utils.formatter import RichConsole
-from src.utils.youtube import YoutubeSearch
-from src.utils.executor import ShellExecutor
-from config import setup_config, update_config
-from src.utils.google_search import google_search
-from src.utils.email import EmailInput, compose_and_send_email
+from aipatt.utils.formatter import RichConsole
+from aipatt.utils.youtube import YoutubeSearch
+from aipatt.utils.executor import ShellExecutor
+from aipatt.utils.google_search import google_search
+from aipatt.config import setup_config, update_config
+from aipatt.utils.email import EmailInput, compose_and_send_email
 from importlib.metadata import version as get_version, PackageNotFoundError
 
 console = RichConsole()
@@ -107,7 +107,7 @@ aipatt -m "Send email to example@gmail.com, Meeting at 10 AM"
         piped_data = sys.stdin.read().strip() if not sys.stdin.isatty() else None
         if piped_data:
             with console2.status("[bold green]Processing...[/bold green]"):
-                response = handler.ask(f"Explain this code like you are a Pro Coder:\n{piped_data}")
+                response = handler.ask_t(f"Explain this code like you are a Pro Coder:\n{piped_data}")
             console.print_response(response, markdown=True)
 
         elif query:
@@ -174,7 +174,7 @@ aipatt -m "Send email to example@gmail.com, Meeting at 10 AM"
 
             elif mail:
                 with console2.status("[bold green]Composing Email...[/bold green]"):
-                    response = handler.ask(f"Compose an Email for: {query}")
+                    response = handler.ask_t(f"Compose an Email for: {query}")
                 email_data = handler.parse_email_response(query, response)
 
                 try:
@@ -192,7 +192,7 @@ aipatt -m "Send email to example@gmail.com, Meeting at 10 AM"
                         console.print_error(f"Error: {e}")
                 console.print_response("Google Search Done!\n")
                 with console2.status("[bold green]Processing query...[/bold green]"):
-                    response = handler.ask(f"Google Search Result of '{query}' is: \n\n{results} \n\nAnswer the question of '{query}' in a summarize way.")
+                    response = handler.ask_t(f"Google Search Result of '{query}' is: \n\n{results} \n\nAnswer the question of '{query}' in a summarize way.")
                 console.print_response(response, markdown=True)
 
             else:

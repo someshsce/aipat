@@ -1,7 +1,7 @@
 import os
-from src.ai.tools import tools
 from dotenv import load_dotenv
-from src.utils.get_info import info
+from aipatt.ai.tools import tools
+from aipatt.utils.get_info import info
 from langchain_ollama import ChatOllama
 from langchain_core.messages import SystemMessage
 from langgraph.prebuilt import create_react_agent

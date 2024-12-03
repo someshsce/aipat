@@ -3,15 +3,15 @@ import re
 import uuid
 import sqlite3
 import platform
-from src.ai.agent import agent
 from dotenv import load_dotenv
 from rich.console import Console
+from aipatt.ai.agent import agent
 from langchain_ollama import ChatOllama
-from src.utils.formatter import RichConsole
-from src.utils.youtube import YoutubeSearch
+from aipatt.utils.formatter import RichConsole
+from aipatt.utils.youtube import YoutubeSearch
 from langgraph.checkpoint.memory import MemorySaver
 from langchain_core.messages import HumanMessage, AIMessage
-from src.utils.email import EmailInput, compose_and_send_email
+from aipatt.utils.email import EmailInput, compose_and_send_email
 from langgraph.graph import MessagesState, StateGraph, START, END
 
 env_path = os.path.join(os.path.expanduser("~"), ".aipatt.env")
@@ -162,8 +162,7 @@ class LLM:
 
     def ask(self, prompt: str) -> str:
         """
-        Process a user query, maintain conversation history,
-        save conversation to memory, and return the AI response.
+        Process a user query, without maintaing conversation history.
         """
         try:
             if "youtube" in prompt.lower():
@@ -222,6 +221,17 @@ class LLM:
         except Exception as e:
             return f"An error occurred while using the agent: {e}"
 
+    def ask_t(self, prompt: str) -> str:
+        """
+        Process a user query, without maintaing conversation history and it's for basic ask.
+        """
+        try:
+            messages = agent.invoke({"messages": [("user", prompt)]})
+            response_content = messages["messages"][-1].content
+            return response_content
+
+        except Exception as e:
+            return f"An error occurred while using the agent: {e}"
 
     def chat_ask(self, prompt: str) -> str:
         """

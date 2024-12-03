@@ -3,8 +3,8 @@ import sys
 import requests
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
-from config import update_config
 from langchain_core.tools import Tool
+from aipatt.config import update_config
 from langchain_google_community import GoogleSearchAPIWrapper
 
 env_path = os.path.join(os.path.expanduser("~"), ".aipatt.env")
