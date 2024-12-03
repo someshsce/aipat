@@ -4,11 +4,14 @@ from dotenv import load_dotenv
 def setup_config(env_path):
     """Prompt user for configuration details and save to the .aipatt.env file."""
     print("Configuration file not found. Let's set it up.")
-    
+
+    home_dir = os.path.expanduser("~")
+    db_path = os.path.join(home_dir, ".aipatt_memory.db")
+
     try:
-        DATABASE_PATH = input("Enter path for the database file (default: memory.db): ")
+        DATABASE_PATH = input("Enter path for the database file (default: {db_path}): ")
         if not DATABASE_PATH:
-            DATABASE_PATH = "memory.db"
+            DATABASE_PATH = db_path
 
         DEFAULT_MODEL = input("Enter the default model (default: llama3.2): ")
         if not DEFAULT_MODEL:
@@ -53,12 +56,15 @@ def update_config(env_path):
     """Prompt user to update the configuration file."""
     load_dotenv(env_path)
 
+    home_dir = os.path.expanduser("~")
+    db_path = os.path.join(home_dir, ".aipatt_memory.db")
+
     print("Configuration file found. You can update the following settings:")
-    
+
     try:
-        DATABASE_PATH = input(f"Enter path for the database file (current: {os.getenv('DATABASE_PATH', 'memory.db')}): ")
+        DATABASE_PATH = input(f"Enter path for the database file (current: {os.getenv('DATABASE_PATH', '.aipatt_memory.db')}): ")
         if not DATABASE_PATH:
-            DATABASE_PATH = os.getenv("DATABASE_PATH", "memory.db")
+            DATABASE_PATH = db_path
 
         DEFAULT_MODEL = input(f"Enter the default model (current: {os.getenv('DEFAULT_MODEL', 'llama3.2')}): ")
         if not DEFAULT_MODEL:

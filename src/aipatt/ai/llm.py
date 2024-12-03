@@ -25,14 +25,14 @@ class LLM:
         """
         Initialize the LLM with database persistence and session management.
         """
-        self.conn = sqlite3.connect(os.getenv('DATABASE_PATH', 'memory.db'))
+        self.conn = sqlite3.connect(os.getenv('DATABASE_PATH'))
+        self._init_db()
         self.session_id = self._get_or_create_session_id()
         self.llm = ChatOllama(model=os.getenv('DEFAULT_MODEL'))
         self.memory = MemorySaver()
         self.thread_id = str(uuid.uuid4())
         self.config = {"configurable": {"thread_id": self.thread_id}}
         self.workflow = self._build_workflow()
-        self._init_db()
 
     def _init_db(self):
             """Initialize SQLite database for persistent memory."""

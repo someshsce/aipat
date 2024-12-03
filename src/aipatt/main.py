@@ -197,7 +197,9 @@ aipatt -m "Send email to example@gmail.com, Meeting at 10 AM"
 
             else:
                 response = handler.ask(query)
+                print("")
                 console.print_response(response, markdown=True)
+                print("")
 
 if __name__ == "__main__":
     cli()
